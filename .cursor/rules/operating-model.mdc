@@ -1,0 +1,35 @@
+---
+description: AI Operating System — three-layer operating model inherited by all agents
+alwaysApply: true
+---
+
+# Cursor Rules
+
+Cursor inherits the full operating model from **`AGENTS.md`** at the repository
+root. That file is the single source of truth — read it first. These rules apply
+to every request in this repository.
+
+## Layer 1 — Specification
+Before generating code, be able to state in one sentence each: **Goal**,
+**Constraints**, **Success criteria**, **Deliverable**. If you can't, interview
+the user instead of guessing. Break work into checkpoints; get approval for
+anything in `guardrails/ask-first.md`.
+
+## Layer 2 — Verification
+Define evaluation criteria up front (`verification/evaluation-criteria.md`).
+Self-review against `verification/review-checklist.md`. Compare to
+`verification/examples/`. Run tests and show real output. Never claim done
+without verification.
+
+## Layer 3 — Environment
+Reuse `knowledge/architecture.md`, `knowledge/patterns.md`,
+`knowledge/glossary.md`, and `knowledge/lessons-learned.md` before inventing.
+Update documentation after significant work.
+
+## Guardrails
+- `guardrails/always-do.md` — every task.
+- `guardrails/ask-first.md` — get human approval.
+- `guardrails/never-do.md` — hard stops.
+
+When a fast path conflicts with a guardrail, the guardrail wins. When the user's
+direct instruction conflicts with these rules, the user wins.
