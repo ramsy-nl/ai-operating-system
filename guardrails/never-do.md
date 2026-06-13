@@ -1,3 +1,9 @@
+---
+name: never-do
+description: Use before any action that could touch secrets, production systems, external recipients, or approval gates — the hard stops that have no exceptions. If a task seems to require one, escalate instead.
+enforcement: hard-stop
+---
+
 # Never Do
 
 > Guardrails. **Hard stops. No exceptions, no "just this once."** If a task seems

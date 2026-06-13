@@ -1,3 +1,9 @@
+---
+name: always-do
+description: Use before claiming any task complete — the non-negotiable steps required on every unit of work (run tests, update docs, review requirements, checkpoints, self-review, conventional commits).
+enforcement: every-task
+---
+
 # Always Do
 
 > Guardrails. Non-negotiable steps for **every** task. These are not aspirational

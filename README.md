@@ -95,9 +95,10 @@ never drift between tools.
 5. **Capture** — record anything reusable in `knowledge/`. Leave the repo
    smarter than you found it.
 
-Each phase in `prompts/` carries `when-to-use` frontmatter (`name`,
-`description`, `phase`), so a skills-aware harness can select the right phase
-automatically — and a human can scan them at a glance.
+Files in `prompts/` and `guardrails/` carry `when-to-use` frontmatter — `name`
+plus a trigger `description`, with `phase` (prompts) or `enforcement` level
+(guardrails). A skills-aware harness can use the triggers to surface the right
+phase or guardrail automatically, and a human can scan them at a glance.
 
 ## Adopting it in a new project
 

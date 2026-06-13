@@ -1,3 +1,9 @@
+---
+name: red-flags
+description: Use continuously while working — when you catch yourself thinking a rationalization ("it should work", "just this once", "I'll test it after", "it's probably this line"), stop; the thought is the warning that you're about to skip the operating model.
+enforcement: self-check
+---
+
 # Red Flags
 
 > Guardrails. Certain thoughts are a signal that you're about to rationalize a

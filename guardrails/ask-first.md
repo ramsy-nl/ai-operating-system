@@ -1,3 +1,9 @@
+---
+name: ask-first
+description: Use before any consequential or hard-to-undo action — spending money, deleting data, changing infrastructure, installing dependencies, merging to a shared branch — to stop and get explicit human approval first.
+enforcement: human-approval
+---
+
 # Ask First
 
 > Guardrails. **Stop and get explicit human approval** before doing any of these.
