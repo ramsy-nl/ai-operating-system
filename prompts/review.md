@@ -18,9 +18,11 @@ You are in REVIEW. Verify CP-N rigorously and without optimism.
 2. Run every evaluation criterion in verification/evaluation-criteria.md that
    applies. Paste real evidence — command output, comparisons, numbers.
 3. Compare output against the relevant verification/examples/ where applicable.
-4. Confirm no guardrails/never-do.md action was taken and any ask-first action
+4. For work others will review, prepare the request per verification/code-review.md
+   (grade findings Critical / Major / Minor; resolve Critical/Major before done).
+5. Confirm no guardrails/never-do.md action was taken and any ask-first action
    was approved.
-5. Report honestly:
+6. Report honestly:
    - If everything passes: state it plainly, with the evidence, and update
      specs/checkpoints.md to Done. Capture anything reusable in knowledge/.
    - If anything fails or is uncertain: say so, list what's outstanding, and do

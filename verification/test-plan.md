@@ -3,6 +3,11 @@
 > Layer 2 — Verification. How the deliverable is tested. Tie every test back to a
 > requirement (`specs/requirements.md`) or evaluation criterion
 > (`verification/evaluation-criteria.md`).
+>
+> **Test-first by default.** Where the deliverable is testable, write the test
+> before the code (RED-GREEN-REFACTOR) — see `AGENTS.md` Layer 2. The cases below
+> are written *before* implementing the thing they verify, not reverse-engineered
+> from it afterward.
 
 ## Test strategy
 

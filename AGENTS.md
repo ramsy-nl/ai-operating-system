@@ -34,12 +34,19 @@ If you cannot fill all four in, you are not ready to implement.
 
 ## Layer 2: Verification
 
-Before claiming anything is finished:
-- Define evaluation criteria *up front* (`verification/evaluation-criteria.md`),
-  not after the fact.
-- Self-review the output against `verification/review-checklist.md`.
-- Compare against known-good examples in `verification/examples/`.
-- Run tests wherever possible and paste the actual output, not a summary of it.
+Verification is not a final gate you arrive at — it's a discipline you work
+*inside*. Wherever the deliverable is testable, **write the test before the
+code**:
+
+- **RED** — write a failing test that captures the requirement. Run it; watch it fail for the right reason.
+- **GREEN** — write the minimum code to make it pass.
+- **REFACTOR** — clean up with the passing test holding you safe.
+
+Around that loop:
+- Define evaluation criteria *up front* (`verification/evaluation-criteria.md`), not after the fact.
+- Self-review against `verification/review-checklist.md`; compare to known-good `verification/examples/`.
+- For work others will review, follow `verification/code-review.md` — severity-based, rigor over agreement, both when requesting and receiving review.
+- Run tests and paste the **actual** output, not a summary of it.
 
 **Never claim something is complete without verification.** "It should work" is
 not "it works." Evidence before assertions, always.
@@ -63,15 +70,29 @@ Three lists govern what you may do autonomously. Read them before acting.
 - `guardrails/always-do.md` — non-negotiable steps for every task.
 - `guardrails/ask-first.md` — stop and get explicit human approval.
 - `guardrails/never-do.md` — hard stops, no exceptions.
+- `guardrails/red-flags.md` — thoughts that mean you're rationalizing a shortcut. When you catch one, stop.
 
 ## Working rhythm
 
 The `prompts/` directory holds the reusable phases of a unit of work:
-`discovery → planning → implementation → review`. When in doubt about how to
-start, open `prompts/discovery.md`.
+`discovery → planning → implementation → review`. When something breaks, switch
+to `prompts/debugging.md` and find the root cause before touching a fix. When in
+doubt about how to start, open `prompts/discovery.md`.
 
 ## The one rule that overrides convenience
 
 When a fast path conflicts with a guardrail, the guardrail wins. The whole point
 of this repository is that correctness and approval are not optional, even when
 the model is confident.
+
+---
+
+## Lineage
+
+The disciplines here — test-first (RED-GREEN-REFACTOR), root-cause debugging,
+severity-based code review, evidence over claims, and the red-flag self-checks —
+draw on Jesse Vincent's [Superpowers](https://github.com/obra/superpowers)
+methodology. Superpowers is an *executable* auto-activating skills system; this
+repository is the *documented* operating model that any tool can follow. They
+compose well: if your environment has the Superpowers skills installed, they
+enforce at runtime what these files describe.

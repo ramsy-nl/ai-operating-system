@@ -54,8 +54,9 @@ never drift between tools.
 │
 ├── verification/                  # Layer 2 — did we build it right
 │   ├── evaluation-criteria.md
-│   ├── review-checklist.md
-│   ├── test-plan.md
+│   ├── review-checklist.md        # Self-review before claiming done
+│   ├── code-review.md             # Requesting & receiving review (severity-based)
+│   ├── test-plan.md               # Test-first (RED-GREEN-REFACTOR)
 │   └── examples/                  # Known-good reference outputs
 │
 ├── knowledge/                     # Layer 3 — what we already know
@@ -67,13 +68,15 @@ never drift between tools.
 ├── guardrails/                    # What an agent may do autonomously
 │   ├── always-do.md
 │   ├── ask-first.md
-│   └── never-do.md
+│   ├── never-do.md
+│   └── red-flags.md               # "Thoughts that mean STOP" self-checks
 │
 └── prompts/                       # Reusable phases of work
     ├── discovery.md
     ├── planning.md
-    ├── implementation.md
-    └── review.md
+    ├── implementation.md          # Test-first
+    ├── review.md
+    └── debugging.md               # Root cause before fix
 ```
 
 ## How to use it
@@ -97,3 +100,15 @@ from this template). The model files at the root are picked up automatically by
 each tool. Replace the placeholder content in `specs/` and `knowledge/` with the
 specifics of that project; keep `guardrails/`, `verification/`, and `prompts/`
 as your baseline and tighten them as you learn.
+
+## Credits
+
+The core disciplines — test-first (RED-GREEN-REFACTOR), root-cause debugging,
+severity-based code review, evidence over claims, and the red-flag self-checks —
+are adapted from Jesse Vincent's
+[Superpowers](https://github.com/obra/superpowers). Superpowers is an
+*executable* auto-activating skills system; this repository is the *documented*
+operating model that any tool can follow. The two compose: with the Superpowers
+skills installed, they enforce at runtime what these files describe.
+
+Licensed under [MIT](./LICENSE).

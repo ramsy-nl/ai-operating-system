@@ -15,6 +15,7 @@ Claude-specific notes.
 - [`guardrails/always-do.md`](./guardrails/always-do.md)
 - [`guardrails/ask-first.md`](./guardrails/ask-first.md)
 - [`guardrails/never-do.md`](./guardrails/never-do.md)
+- [`guardrails/red-flags.md`](./guardrails/red-flags.md) — thoughts that mean STOP
 
 ## Claude-specific
 

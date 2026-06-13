@@ -16,14 +16,19 @@ Before coding:
 - Confirm CP-N triggers no unapproved action in guardrails/ask-first.md. If it
   does, stop and ask.
 
-While coding:
+While coding (test-first — RED-GREEN-REFACTOR):
+- RED: write a failing test that captures the requirement; run it, watch it fail
+  for the right reason.
+- GREEN: write the minimum code to make it pass.
+- REFACTOR: clean up with the test holding you safe.
 - Match the surrounding code's style and conventions.
 - Prefer existing patterns; if you invent a reusable one, add it to patterns.md.
 - Make the smallest change that satisfies the requirement. No scope creep.
 - Log any non-obvious decision in specs/decisions.md as you go.
+- If something breaks, switch to prompts/debugging.md — root cause before fix.
 
 When the checkpoint's code is written:
-- Write/run its tests and paste the real output.
+- Re-run the tests and paste the real output.
 - Do NOT mark it done — that happens in REVIEW.
 
 Follow guardrails/always-do.md and guardrails/never-do.md at all times.
