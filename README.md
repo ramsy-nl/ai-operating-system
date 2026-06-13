@@ -1,5 +1,7 @@
 # AI Operating System
 
+[![CI](https://github.com/ramsy-nl/ai-operating-system/actions/workflows/ci.yml/badge.svg)](https://github.com/ramsy-nl/ai-operating-system/actions/workflows/ci.yml)
+
 A reusable repository template that gives every project the same **operating
 model** for AI-assisted work. The model (Claude, Cursor, Copilot, Codex, or
 whatever comes next) is an interchangeable execution engine. This repository is
@@ -43,7 +45,10 @@ never drift between tools.
 │
 ├── .claude/                       # Claude-specific config
 ├── .cursor/rules/                 # Cursor inherits AGENTS.md
-├── .github/copilot-instructions.md# Copilot inherits AGENTS.md
+├── .github/
+│   ├── copilot-instructions.md    # Copilot inherits AGENTS.md
+│   └── workflows/ci.yml           # Validates the repo's own rules
+├── scripts/                       # Self-checks run by CI (links, frontmatter, commits)
 │
 ├── specs/                         # Layer 1 — what & why
 │   ├── project-goal.md
@@ -107,6 +112,24 @@ from this template). The model files at the root are picked up automatically by
 each tool. Replace the placeholder content in `specs/` and `knowledge/` with the
 specifics of that project; keep `guardrails/`, `verification/`, and `prompts/`
 as your baseline and tighten them as you learn.
+
+## Self-enforcement
+
+The repository practices its own Layer 2. On every push and pull request, CI
+(`.github/workflows/ci.yml`) runs the checks in `scripts/`:
+
+- **Links** — every relative markdown link resolves to a real file.
+- **Frontmatter** — every `prompts/` and `guardrails/` file has well-formed
+  `when-to-use` frontmatter with the required fields.
+- **Commits** — pull-request commits follow Conventional Commits.
+
+Run them locally before pushing:
+
+```bash
+python3 scripts/check-links.py
+python3 scripts/check-frontmatter.py   # needs: pip install pyyaml
+bash    scripts/check-commits.sh origin/main..HEAD
+```
 
 ## Credits
 

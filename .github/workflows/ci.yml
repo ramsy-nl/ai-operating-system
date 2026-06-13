@@ -1,0 +1,40 @@
+name: CI
+
+# The repository validates its own operating model: links resolve, frontmatter
+# is well-formed, and PR commits follow Conventional Commits. Layer 2, enforced.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Links & frontmatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Check internal links
+        run: python3 scripts/check-links.py
+      - name: Check frontmatter
+        run: python3 scripts/check-frontmatter.py
+
+  commitlint:
+    name: Conventional Commits
+    # Only PR commits are linted; main's early history predates the convention.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check commit messages
+        run: bash scripts/check-commits.sh "${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
