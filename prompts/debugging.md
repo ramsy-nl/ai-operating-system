@@ -1,3 +1,9 @@
+---
+name: debugging
+description: Use whenever something breaks — a bug, a failing test, or unexpected behaviour — to find the root cause before changing any code. A parallel phase, not part of the main 1-4 sequence.
+phase: parallel
+---
+
 # Debugging Prompt
 
 > A parallel phase to the main rhythm (`discovery → planning → implementation →

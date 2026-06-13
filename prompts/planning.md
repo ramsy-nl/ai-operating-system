@@ -1,3 +1,9 @@
+---
+name: planning
+description: Use after the spec is confirmed and before writing implementation code — breaks the goal into small, independently reviewable checkpoints and decides how before doing.
+phase: 2
+---
+
 # Planning Prompt
 
 > Reusable phase 2 of 4: `discovery → planning → implementation → review`.

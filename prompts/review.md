@@ -1,3 +1,9 @@
+---
+name: review
+description: Use after a checkpoint is implemented and before marking it done — verifies the work rigorously with real evidence (Layer 2) and prepares severity-graded code review.
+phase: 4
+---
+
 # Review Prompt
 
 > Reusable phase 4 of 4: `discovery → planning → implementation → review`.

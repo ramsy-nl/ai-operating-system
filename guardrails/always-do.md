@@ -11,6 +11,11 @@
 - **Create / update checkpoints.** Break work into reviewable units and keep
   `specs/checkpoints.md` current.
 - **Self-review.** Walk `verification/review-checklist.md` before claiming done.
+- **Write [Conventional Commits](https://www.conventionalcommits.org).** Every
+  commit message is `type(optional-scope): summary` — imperative, ~72 chars or
+  less. Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`,
+  `build`, `ci`, `chore`, `revert`. Mark breaking changes with `!` after the
+  type/scope (e.g. `feat!:`) or a `BREAKING CHANGE:` footer.
 - **Log non-obvious decisions.** Append to `specs/decisions.md` as you make them.
 - **Leave the repo smarter.** Capture anything reusable in `knowledge/` and any
   surprise in `knowledge/lessons-learned.md`.

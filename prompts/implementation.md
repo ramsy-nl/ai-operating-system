@@ -1,3 +1,9 @@
+---
+name: implementation
+description: Use after the plan is approved to build one checkpoint at a time, test-first (RED-GREEN-REFACTOR), making the smallest change that satisfies the requirement.
+phase: 3
+---
+
 # Implementation Prompt
 
 > Reusable phase 3 of 4: `discovery → planning → implementation → review`.

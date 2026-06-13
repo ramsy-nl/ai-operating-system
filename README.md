@@ -86,12 +86,18 @@ never drift between tools.
    Verification sections.
 2. **Plan** — break the goal into `specs/checkpoints.md`. Each checkpoint is
    independently reviewable.
-3. **Build** — work one checkpoint at a time. Follow `guardrails/`. Log
-   non-obvious choices in `specs/decisions.md`.
+3. **Build** — work one checkpoint at a time, test-first. Follow `guardrails/`.
+   Log non-obvious choices in `specs/decisions.md`. Commit with
+   [Conventional Commits](https://www.conventionalcommits.org)
+   (`type(scope): summary`).
 4. **Verify** — before marking anything done, run `verification/review-checklist.md`
    and the `test-plan.md`. Paste real output.
 5. **Capture** — record anything reusable in `knowledge/`. Leave the repo
    smarter than you found it.
+
+Each phase in `prompts/` carries `when-to-use` frontmatter (`name`,
+`description`, `phase`), so a skills-aware harness can select the right phase
+automatically — and a human can scan them at a glance.
 
 ## Adopting it in a new project
 

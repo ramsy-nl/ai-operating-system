@@ -1,3 +1,9 @@
+---
+name: discovery
+description: Use at the start of a unit of work when the goal, constraints, or success criteria aren't all crystal clear — turns a vague request into a confirmed specification (Layer 1) before any planning or code.
+phase: 1
+---
+
 # Discovery Prompt
 
 > Reusable phase 1 of 4: `discovery → planning → implementation → review`.
